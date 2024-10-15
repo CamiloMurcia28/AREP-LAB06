@@ -73,9 +73,11 @@ The interaction between the system components follows a clear flow:
 ### Architecture Diagram
 ```mermaid
 graph TD
-    Client_Browser[Client Browser HTML/JS] -->|HTTP/HTTPS| EC2_Instance_1[EC2 Instance 1]
+    Client_Browser[Client Browser HTML/JS] -->|HTTPS REQUEST| EC2_Instance_1[EC2 Instance 1]
+    Spring_Boot_API[Spring_Boot_API] -->|HTTPS RESPONSE| Client_Browser[Client Browser HTML/JS]
     EC2_Instance_1 --> Spring_Boot_API[Spring Boot API]
     Spring_Boot_API --> Property_Controller[Property Controller]
+    Spring_Boot_API --> |GET Request| FrontEnd [FrontEnd]
     Property_Controller --> Service_Layer[Service Layer]
     Service_Layer --> Property_Service[Property Service]
     Property_Service --> Data_Access[Data Access]
@@ -86,6 +88,35 @@ graph TD
     MySQL -->|Data Storage| MySQL_DB[(MySQL)]
 ```
 
+- Deployment diagram:
+  ```mermaid
+graph TD
+
+    F[Client] -->|HTTPS| B
+
+    subgraph "AWS EC2"
+        direction TB
+
+        subgraph Frontend_Instance
+            B[Apache HTML, CSS, JS]
+            C[SSL Cert]
+            B --> C
+        end
+
+        subgraph Backend_Instance
+            D[Spring Boot App]
+            E[SSL Cert]
+            D --> E
+        end
+
+        
+
+        B -->|HTTPS| D
+        B -->|GET POST DELETE PUT| D
+        D -->|Response: JSON| B
+    end
+
+```  
 
 ## Class Design
 
@@ -126,6 +157,14 @@ mvn spring-boot:run
 
 Navigate to http://localhost:8080/index.html to interact with the application.
 
+![image](https://github.com/user-attachments/assets/e9d5c96f-4706-46a4-824a-6afac30a695e)
+
+![image](https://github.com/user-attachments/assets/7de366a8-48d3-47b5-b837-2be1b1a0af73)
+
+![image](https://github.com/user-attachments/assets/f785ebac-eb91-4224-9da8-a1e469785599)
+
+![image](https://github.com/user-attachments/assets/64ac2357-7a1d-4eb3-8cec-c7b2d9cc2ab1)
+
 ### Deployment
 
 To deploy the system on AWS:
@@ -136,9 +175,6 @@ To deploy the system on AWS:
 4. Deploy the frontend HTML/JS files to Instance 1 or serve them from a separate web server
 5. Start the Spring Boot service on Instance 1
 6. Start the Front-End service on Instance 2 
-
-
-![Screenshot 2024-09-30 185517](https://github.com/user-attachments/assets/63101708-64e9-4e2b-9359-f12fa4cf1968)
 
 
  ## Deployment Video of the system running
