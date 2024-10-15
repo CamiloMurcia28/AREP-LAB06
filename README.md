@@ -163,28 +163,7 @@ shouldNotValidateNonExistentUser: Verifies that a user that does not exist in th
 shouldCreateUserWithShortUsername: Verifies that a user with a short username is successfully created.
 shouldCreateUserWithLongPassword: Ensures that a user with a long password can be successfully created.
 
-These tests cover basic CRUD operations (Create, Read, Update, Delete) for the project.
-
-Create: 
-![image](https://github.com/user-attachments/assets/7308c5cc-63d2-4193-bcd0-3071d606cebb)
-
-Read: 
-![image](https://github.com/user-attachments/assets/1ac8cbf3-644a-44c0-81d1-b7543d76fc8f)
-
-Update: 
-![image](https://github.com/user-attachments/assets/87437762-c1fe-4d15-b8a0-5c6fa6733a35)
-
-Delete: 
-![image](https://github.com/user-attachments/assets/55acaf4b-e7bc-4ddf-8978-37f41ee3a351)
-![image](https://github.com/user-attachments/assets/6f360e5f-b51f-4fef-aa58-1624cedfe679)
-
-#### Optional Enhancements (for extra credit):
-
-![Recording 2024-10-01 150240](https://github.com/user-attachments/assets/3c8d32c1-a550-4ad0-82ed-dc55799e2ce7)
-
-![image](https://github.com/user-attachments/assets/1df8655c-3f1f-411b-80f4-202398966394)
-
-![image](https://github.com/user-attachments/assets/5ae3db08-594a-4fc9-9a82-4133cacd5b64)
+These tests cover the login and registration system into the previously developed real estate management web application in Spring Boot.
 
 
 ## Built With
@@ -196,7 +175,7 @@ Delete:
 
 ## Versioning
 
-![AREP LAB 05](https://img.shields.io/badge/AREP_LAB_06-v1.0.0-blue)
+![AREP LAB 06](https://img.shields.io/badge/AREP_LAB_06-v1.0.0-blue)
 
 ## Author
 
