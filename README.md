@@ -1,7 +1,7 @@
 # AREP-LAB06
 LAB 06 - AREP
 
-# Property Management CRUD System
+# Security Application Design
 
 ## Introduction
 
@@ -10,7 +10,7 @@ This workshop emphasizes key software development skills such as client-server c
 
 ## Application description
 
-The developed application is a manager for a property list. It allows users to add property to a list along with a detailed description to facilitate organization and tracking during shopping. The application demonstrates how the web server can handle requests to add property, list existing property, and serve static content such as HTML, using Spring Boot frameworks.
+The objective of this workshop is to integrate a login and registration system into the previously developed real estate management web application in Spring Boot, where users can view, add, edit, and delete records. Additionally, the goal is to deploy it on AWS with two instances: one to host the front-end files, which will make requests to the other instance hosting the application's back-end.
 
 ## Starting
 
@@ -32,6 +32,8 @@ You need to have installed Git, Maven 3.9.9 and Java 17 to be able to execute th
 
 This Property Management System is a web-based application that allows users to:
 
+* Establish a secure connection
+* Access to a login and register user screen
 * Add new property listings
 * View a complete list of properties along with detailed information for each
 * Modify existing property details
@@ -91,9 +93,12 @@ Key classes in the system include:
 
 * Property: Represents a real estate property with attributes such as ID, address, price, size, and description.
 * PropertyService: Handles business logic for property management.
+* UserService: Handles the logic related to user authentication and management
 * AllControlller: Handles HTTP requests directed at the root URL ("/").
 * RealStateController: Exposes REST endpoints for property operations.
+* LoginController: This controller handles login and registration requests
 * PropertyRepository: Interfaces with the database for data persistence.
+* UserRepository: Is responsible for operations related to users, allowing for finding users by username and performing CRUD
 
 
 ## Deployment Instructions
@@ -105,8 +110,8 @@ To install and run this application locally, follow these steps:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/CamiloMurcia28/AREP-LAB05.git
-cd AREP-LAB05
+git clone https://github.com/CamiloMurcia28/AREP-LAB06.git
+cd AREP-LAB06
 ```
 
 2. Build and run:
@@ -125,14 +130,13 @@ Navigate to http://localhost:8080/index.html to interact with the application.
 
 To deploy the system on AWS:
 
-1. Set up an EC2 instance (Instance 1) for the Spring Boot backend service
-2. Set up another EC2 instance (Instance 2) for the MySQL database
+1. Set up an EC2 instance (Instance 1) for the Secure Spring Boot backend service
+2. Set up another EC2 instance (Instance 2) for the Secure Front-End service.
 3. Configure security groups to allow necessary traffic between the instances and from the internet to Instance 1
 4. Deploy the frontend HTML/JS files to Instance 1 or serve them from a separate web server
 5. Start the Spring Boot service on Instance 1
-6. Ensure MySQL is running and properly configured on Instance 2
+6. Start the Front-End service on Instance 2 
 
-It's important to know that you must change the application.properties file to adapt it to aws mySQL database:
 
 ![Screenshot 2024-09-30 185517](https://github.com/user-attachments/assets/63101708-64e9-4e2b-9359-f12fa4cf1968)
 
@@ -194,7 +198,7 @@ Delete:
 
 ## Versioning
 
-![AREP LAB 05](https://img.shields.io/badge/AREP_LAB_05-v1.0.0-blue)
+![AREP LAB 05](https://img.shields.io/badge/AREP_LAB_06-v1.0.0-blue)
 
 ## Author
 
