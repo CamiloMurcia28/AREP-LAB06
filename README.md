@@ -77,7 +77,7 @@ graph TD
     Spring_Boot_API[Spring_Boot_API] -->|HTTPS RESPONSE| Client_Browser[Client Browser HTML/JS]
     EC2_Instance_1 --> Spring_Boot_API[Spring Boot API]
     Spring_Boot_API --> Property_Controller[Property Controller]
-    Spring_Boot_API --> |GET Request| FrontEnd [FrontEnd]
+    Spring_Boot_API --> |GET Request| FrontEnd[FrontEnd]
     Property_Controller --> Service_Layer[Service Layer]
     Service_Layer --> Property_Service[Property Service]
     Property_Service --> Data_Access[Data Access]
