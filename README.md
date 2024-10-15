@@ -93,7 +93,8 @@ graph TD
 ```
 
 - Deployment diagram:
-  ```mermaid
+  
+```mermaid
 graph TD
 
     F[Client] -->|HTTPS| B
@@ -119,8 +120,7 @@ graph TD
         B -->|GET POST DELETE PUT| D
         D -->|Response: JSON| B
     end
-
-```  
+```
 
 ## Class Design
 
