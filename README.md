@@ -73,19 +73,24 @@ The interaction between the system components follows a clear flow:
 ### Architecture Diagram
 ```mermaid
 graph TD
-    Client_Browser[Client Browser HTML/JS] -->|HTTPS REQUEST| EC2_Instance_1[EC2 Instance 1]
+    Client_Browser[Client Browser HTML/JS] -->|HTTPS REQUEST| Spring_Boot_API[Spring_Boot_API]
     Spring_Boot_API[Spring_Boot_API] -->|HTTPS RESPONSE| Client_Browser[Client Browser HTML/JS]
     EC2_Instance_1 --> Spring_Boot_API[Spring Boot API]
-    Spring_Boot_API --> Property_Controller[Property Controller]
+    Spring_Boot_API --> |GET/POST/PUT/DELETE|Property_Controller[Property Controller]
     Spring_Boot_API --> |GET Request| FrontEnd[FrontEnd]
     Property_Controller --> Service_Layer[Service Layer]
     Service_Layer --> Property_Service[Property Service]
     Property_Service --> Data_Access[Data Access]
     Data_Access --> Property_Repository[Property Repository]
-    Property_Repository --> JPA[ JPA / Hibernate]
-    JPA --> EC2_Instance_2[EC2 Instance 2]
-    EC2_Instance_2 --> MySQL[MySQL Database]
+    Property_Repository --> |CRUD operations| MySQL[MySQL Database]
     MySQL -->|Data Storage| MySQL_DB[(MySQL)]
+    MySQL[MySQL Database] --> |Returns Data| Property_Repository
+    Property_Repository --> |Returns Data| Data_Access
+    Data_Access --> |Returns Data| Property_Service
+    Property_Service --> |Returns Data| Service_Layer
+    Service_Layer --> |Returns Data| Property_Controller
+    Property_Controller --> |Returns Response| Spring_Boot_API
+
 ```
 
 - Deployment diagram:
