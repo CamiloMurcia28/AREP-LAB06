@@ -153,17 +153,15 @@ To execute the test:
 mvn test
 ```
 
-![image](https://github.com/user-attachments/assets/aa106e3d-f528-4d15-953b-5118fcc92b3c)
+![image](https://github.com/user-attachments/assets/ed69417a-044a-4279-b8a5-adf21b54aed8)
 
-getPropertyById_Found: Checks that an existing property can be retrieved by its ID.
-getPropertyById_NotFound: Checks that "NOT_FOUND" is returned when searching for a non-existent property.
-createProperty: Tests the creation of a new property.
-updateProperty_Found: Checks the update of an existing property.
-deleteProperty_Found: Checks the deletion of an existing property.
-whenSaveProperty_thenReturnProperty: Tests that a property is successfully saved.
-whenFindById_thenReturnProperty: Checks that a property can be found by its ID.
-whenFindAll_thenReturnPropertyList: Checks that all properties can be retrieved.
-whenDeleteById_thenPropertyShouldNotExist: Checks that a property is successfully deleted by its ID.
+shouldCreateUserSuccessfully: Verifies that a user is successfully created and stored in the repository.
+shouldNotCreateUserWithDuplicateUsername: Ensures that a user cannot be created with a duplicate username.
+shouldValidateUserSuccessfully: Verifies that a user is successfully validated with valid credentials.
+shouldFailValidationWithIncorrectPassword: Ensures that a user cannot be validated with an incorrect password.
+shouldNotValidateNonExistentUser: Verifies that a user that does not exist in the system cannot be validated.
+shouldCreateUserWithShortUsername: Verifies that a user with a short username is successfully created.
+shouldCreateUserWithLongPassword: Ensures that a user with a long password can be successfully created.
 
 These tests cover basic CRUD operations (Create, Read, Update, Delete) for the project.
 
