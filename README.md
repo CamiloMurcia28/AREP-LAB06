@@ -155,13 +155,13 @@ mvn test
 
 ![image](https://github.com/user-attachments/assets/ed69417a-044a-4279-b8a5-adf21b54aed8)
 
-shouldCreateUserSuccessfully: Verifies that a user is successfully created and stored in the repository.
-shouldNotCreateUserWithDuplicateUsername: Ensures that a user cannot be created with a duplicate username.
-shouldValidateUserSuccessfully: Verifies that a user is successfully validated with valid credentials.
-shouldFailValidationWithIncorrectPassword: Ensures that a user cannot be validated with an incorrect password.
-shouldNotValidateNonExistentUser: Verifies that a user that does not exist in the system cannot be validated.
-shouldCreateUserWithShortUsername: Verifies that a user with a short username is successfully created.
-shouldCreateUserWithLongPassword: Ensures that a user with a long password can be successfully created.
+- shouldCreateUserSuccessfully: Verifies that a user is successfully created and stored in the repository.
+- shouldNotCreateUserWithDuplicateUsername: Ensures that a user cannot be created with a duplicate username.
+- shouldValidateUserSuccessfully: Verifies that a user is successfully validated with valid credentials.
+- shouldFailValidationWithIncorrectPassword: Ensures that a user cannot be validated with an incorrect password.
+- shouldNotValidateNonExistentUser: Verifies that a user that does not exist in the system cannot be validated.
+- shouldCreateUserWithShortUsername: Verifies that a user with a short username is successfully created.
+- shouldCreateUserWithLongPassword: Ensures that a user with a long password can be successfully created.
 
 These tests cover the login and registration system into the previously developed real estate management web application in Spring Boot.
 
