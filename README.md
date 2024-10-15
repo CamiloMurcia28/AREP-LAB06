@@ -99,16 +99,16 @@ graph TD
 
     F[Client] -->|HTTPS| B
 
-    subgraph "FrontEnd_Instance" AWS INSTANCE 1
+    subgraph FrontEnd_Instance
         direction TB
 
-        subgraph Frontend_Instance
+        subgraph "Frontend_Instance"
             B[Apache HTML, CSS, JS]
             C[SSL Cert]
             B --> C
         end
 
-        subgraph "BackEnd_Instance" AWS INSTANCE 2
+        subgraph "BackEnd_Instance"
             D[Spring Boot App]
             E[SSL Cert]
             D --> E
