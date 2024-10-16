@@ -191,7 +191,7 @@ To deploy the system on AWS:
 
  ## Deployment Video of the system running
 
- [VIDEO AWS EC2](https://youtu.be/qo7sLoDTja4)
+ [DEPLOYMENT VIDEO 06](https://youtu.be/aySYZ3lNkI8)
    
 ## Running Tests
 
@@ -217,7 +217,11 @@ These tests cover the login and registration system into the previously develope
 ## Built With
     * Spring Boot - The backend framework
     * React - The frontend library
-    * MySQL - Database
+    * H2 Database Engine - Database
+    * HTML - Markup Language
+    * CSS - Style sheet language
+    * JavaScript - Programming language and core technology of the Web
+    * The Apache HTTP Server Project - Web Server
     * Maven - Dependency Management
     * npm - Package Manager for JavaScript
 
