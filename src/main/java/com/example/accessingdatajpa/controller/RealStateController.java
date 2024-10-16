@@ -18,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/properties")
+@CrossOrigin("*" )
 public class RealStateController {
 
     @Autowired

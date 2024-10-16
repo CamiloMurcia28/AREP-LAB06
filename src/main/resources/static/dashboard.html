@@ -295,7 +295,7 @@
         
         async function fetchProperties() {
             try {
-                const response = await fetch('/api/properties');
+                const response = await fetch('https://camilomurcialab6backend.duckdns.org:443/api/properties');
                 if (!response.ok) throw new Error('Error fetching properties');
                 properties = await response.json();
                 filteredProperties = [...properties];
@@ -320,7 +320,7 @@
 
         async function addProperty(propertyData) {
             try {
-                const response = await fetch('/api/properties', {
+                const response = await fetch('https://camilomurcialab6backend.duckdns.org:443/api/properties', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -337,7 +337,7 @@
 
         async function updateProperty(propertyData) {
             try {
-                const response = await fetch(`/api/properties/${propertyData.id}`, {
+                const response = await fetch(`https://camilomurcialab6backend.duckdns.org:443/api/properties/${propertyData.id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
@@ -355,7 +355,7 @@
         async function deleteProperty(id) {
             if (confirm('¿Está seguro de que desea eliminar esta propiedad?')) {
                 try {
-                    const response = await fetch(`/api/properties/${id}`, {
+                    const response = await fetch(`https://camilomurcialab6backend.duckdns.org:443/api/propertiesapi/properties/${id}`, {
                         method: 'DELETE',
                     });
                     if (!response.ok) throw new Error('Error deleting property');

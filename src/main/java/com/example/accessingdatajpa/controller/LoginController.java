@@ -19,7 +19,7 @@ import com.example.accessingdatajpa.services.UserService;
  */
 @RestController
 @RequestMapping("/login")
-@CrossOrigin(origins = "*")
+@CrossOrigin("*")
 public class LoginController {
 
     private UserService userService;
