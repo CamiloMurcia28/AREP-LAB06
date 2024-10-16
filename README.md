@@ -55,20 +55,18 @@ The system is designed with a three-tier architecture and is deployed on AWS:
     * Provides RESTful endpoints for CRUD operations
     *  Manages business logic and data validation
     *  Interacts with the database using JPA/Hibernate
-
-* Database: MySQL
-
-    * Hosted on EC2 instance 2
-    * Stores property information in the properties table
+    * Database: 
+        * Stores property information in the properties table
+        * Stores user information in the User table
 
 #### System Interaction
 The interaction between the system components follows a clear flow:
 
-1. Frontend (HTML + JavaScript): The user interacts with the web interface to create, view, update, or delete property listings. These actions trigger AJAX or Fetch API calls to the backend.
+1. Frontend (HTML + JavaScript): The user interacts with the web interface to create, view, update, or delete property listings. These actions trigger AJAX or Fetch API calls to the backend, hosted on EC2 instance 2, Communication between the client and server is done via HTTPS, ensuring that data is transmitted securely.
 
-2. Backend (Spring Boot REST API): The backend receives the requests from the frontend, processes them (business logic, data validation), and interacts with the database via JPA/Hibernate to either retrieve or modify data. It then returns the response (e.g., success/failure, data) back to the frontend.
+2. Backend (Spring Boot REST API): The backend receives the requests from the frontend, processes them (business logic, data validation), and interacts with the database via JPA/Hibernate to either retrieve or modify data. It then returns the response (e.g., success/failure, data) back to the frontend, hosted on EC2 instance 1.
 
-3. Database (MySQL): The backend communicates with the MySQL database hosted on EC2 instance 2, where all property data is stored. CRUD operations are performed on the properties table, and the results are sent back to the backend, which in turn responds to the frontend, updating the user interface as necessary.
+3. Database (H2): The backend communicates with the H2 database, where all property data AND user data is stored. CRUD operations are performed on the properties table, and the results are sent back to the backend, which in turn responds to the frontend, updating the user interface as necessary.
 
 ### Architecture Diagram
 ```mermaid
@@ -134,6 +132,7 @@ Key classes in the system include:
 * LoginController: This controller handles login and registration requests
 * PropertyRepository: Interfaces with the database for data persistence.
 * UserRepository: Is responsible for operations related to users, allowing for finding users by username and performing CRUD
+* Database: The repository interacts with the database to store and retrieve property and user information. In this case, H2 has been used as an in-memory database to facilitate development and testing.
 
 
 ## Deployment Instructions
