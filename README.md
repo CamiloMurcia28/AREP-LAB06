@@ -169,6 +169,14 @@ Navigate to http://localhost:8080/index.html to interact with the application.
 
 ![image](https://github.com/user-attachments/assets/64ac2357-7a1d-4eb3-8cec-c7b2d9cc2ab1)
 
+![image](https://github.com/user-attachments/assets/05748942-43f3-41a9-9f08-d3df84f33702)
+
+![image](https://github.com/user-attachments/assets/d02ef879-08de-46ce-a10d-7b0658c9f5b5)
+
+![Recording 2024-10-16 13243](https://github.com/user-attachments/assets/56601038-cb63-4f8b-a8de-26ddf84fb0de)
+
+
+
 ### Deployment
 
 To deploy the system on AWS:
