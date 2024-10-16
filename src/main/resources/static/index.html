@@ -120,7 +120,7 @@
 
             const isLogin = document.getElementById('formTitle').textContent === 'Log In';
 
-            const url = isLogin ? 'https://camilomurcialab6backend.duckdns.org:443/api/properties/login' : 'https://camilomurcialab6backend.duckdns.org:443/api/properties/login/new';
+            const url = isLogin ? '/login' : '/login/new';
             const method = 'POST';
 
             fetch(url, {
